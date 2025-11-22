@@ -1,0 +1,158 @@
+Anamnesis - Conversation Knowledge Extraction System
+Copyright (c) 2025 Hyperpolymath
+
+DUAL LICENSE: You may use this software under EITHER of the following licenses:
+
+================================================================================
+LICENSE OPTION 1: MIT License
+================================================================================
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+LICENSE OPTION 2: Palimpsest License v0.8
+================================================================================
+
+Palimpsest License v0.8 (2025-11-22)
+https://example.org/palimpsest-license/v0.8  [Placeholder URL]
+
+PREAMBLE
+
+The Palimpsest License is designed for politically autonomous software that
+prioritizes:
+- Reversibility over irreversible change
+- Emotional safety over efficiency
+- Distributed authority over centralized control
+- Long-term sustainability over rapid growth
+
+This license grants broad permissions while preserving certain values and
+protections that the original authors consider essential.
+
+TERMS AND CONDITIONS
+
+1. DEFINITIONS
+
+"Software" means the Anamnesis conversation knowledge extraction system,
+including all source code, documentation, configuration files, and associated
+materials in this repository.
+
+"Modification" means any addition, deletion, or change to the Software.
+
+"Distribution" means making the Software available to others, whether by
+physical media, network transmission, or any other method.
+
+"You" means any individual or legal entity exercising permissions granted by
+this License.
+
+"Palimpsest Principles" means:
+- Reversibility: Changes can be undone or rolled back
+- Emotional Safety: Development prioritizes human well-being
+- Distributed Authority: Decision-making is decentralized
+- Long-term Thinking: Sustainability over short-term gains
+
+2. GRANT OF RIGHTS
+
+Subject to the terms of this License, You are granted a worldwide, royalty-free,
+non-exclusive license to:
+
+a) Use the Software for any purpose, including commercial purposes
+b) Study how the Software works and modify it
+c) Distribute copies of the Software
+d) Distribute modified versions of the Software
+
+3. ATTRIBUTION
+
+You must retain in the Software and any Modifications:
+- This license text
+- Copyright notices
+- Author attributions
+- Links to the original source repository
+
+4. PALIMPSEST PRINCIPLES REQUIREMENT
+
+If You distribute the Software or Modifications, You must make reasonable
+efforts to uphold the Palimpsest Principles:
+
+a) **Reversibility**: Provide version control or rollback mechanisms where
+   feasible. Document upgrade/downgrade paths.
+
+b) **Emotional Safety**: Do not use the Software in systems designed primarily
+   for surveillance, behavioral manipulation, or psychological pressure.
+
+c) **Distributed Authority**: If the Software is used in multi-user systems,
+   provide mechanisms for distributed decision-making or user autonomy.
+
+d) **Long-term Thinking**: Consider impacts beyond immediate technical
+   requirements. Document maintenance burden and sustainability plans.
+
+These are aspirational guidelines, not strict legal requirements. Violations do
+not automatically terminate the license, but repeated willful violations may
+result in revocation at the licensor's discretion.
+
+5. COPYLEFT (SHARE-ALIKE)
+
+If You distribute Modifications, You must:
+- Make the source code available under this License OR the MIT License
+- Clearly indicate what changes were made
+- Include a prominent notice in modified files
+
+6. PATENT GRANT
+
+Each contributor grants You a perpetual, worldwide, non-exclusive, royalty-free
+patent license to make, use, sell, and distribute the Software, limited to
+patent claims licensable by that contributor that are necessarily infringed by
+their contribution(s).
+
+7. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+8. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+9. TERMINATION
+
+This License automatically terminates if You fail to comply with its terms.
+However, licenses of downstream recipients remain valid.
+
+10. INTERPRETATION
+
+This License shall be governed by and construed in accordance with the laws of
+the jurisdiction in which the original author resides, without regard to
+conflict of law provisions.
+
+If any provision is found unenforceable, it shall be modified to the minimum
+extent necessary to make it enforceable, or severed if modification is not
+possible.
+
+================================================================================
+END OF LICENSE
+================================================================================
+
+For questions about licensing, contact:
+- Email: [To be added by maintainer]
+- GitHub Issues: https://github.com/Hyperpolymath/convesation-spaghetti/issues
+
+SPDX-License-Identifier: MIT OR Palimpsest-0.8

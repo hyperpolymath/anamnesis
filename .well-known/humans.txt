@@ -1,0 +1,197 @@
+# humanstxt.org - Attribution and Credits
+
+# ============================================================================
+# TEAM
+# ============================================================================
+
+# Creator & Lead Developer:
+    Name: Hyperpolymath
+    Role: Project Founder, Architect, Lead Developer
+    Location: [Location TBD]
+    GitHub: https://github.com/Hyperpolymath
+    Email: [CONTACT_EMAIL_TO_BE_ADDED]
+
+# AI-Assisted Development:
+    Name: Claude (Anthropic)
+    Role: Research, Architecture, Starter Code Generation
+    Model: Claude 3.5 Sonnet (claude-sonnet-4-5-20250929)
+    Session: 2025-11-22 Autonomous Development Session
+    Contribution: ~17,000 lines of code and documentation
+    Note: All work reviewed and approved by human maintainer
+
+# Contributors:
+    (None yet - project in early development)
+    Interested? See CONTRIBUTING.md
+
+# ============================================================================
+# THANKS
+# ============================================================================
+
+# Inspiration & Prior Art:
+    - Dale Miller & Gopalan Nadathur (λProlog creators)
+    - Francesco Martinuzzi et al. (ReservoirComputing.jl authors)
+    - OCaml community (Angstrom, Atdgen, Dune teams)
+    - Elixir/OTP community (José Valim, BEAM ecosystem)
+    - Julia community (JuliaLang core team, package maintainers)
+    - ReScript community (Cheng Lou, Rescript Association)
+    - W3C (RDF, SPARQL, semantic web standards)
+
+# Research Papers Referenced:
+    - Miller & Nadathur (2012): Programming with Higher-Order Logic
+    - Martinuzzi et al. (2022): ReservoirComputing.jl (JMLR)
+    - Towell & Shavlik (1994): Knowledge-Based ANNs (Artificial Intelligence)
+    - W3C SPARQL 1.1 Specification (2013)
+
+# Tools & Infrastructure:
+    - Dune (OCaml build system)
+    - Mix (Elixir build tool)
+    - Cargo/Julia Pkg (package managers)
+    - Git (version control)
+    - Virtuoso (RDF triplestore)
+    - VS Code / Vim / Emacs (editors)
+
+# ============================================================================
+# TECHNOLOGY
+# ============================================================================
+
+# Languages:
+    - OCaml 5.0+ (parser layer, type-safe parsing)
+    - Elixir 1.15+ (orchestration, OTP supervision)
+    - λProlog/ELPI 2.0.6+ (meta-reasoning)
+    - Julia 1.10+ (RDF manipulation, reservoir computing)
+    - ReScript 11+ (visualization, type-safe UI)
+
+# Build System:
+    - Dune 3.0+ (OCaml)
+    - Mix (Elixir)
+    - Just (unified command runner)
+    - Nix Flakes (reproducible builds)
+
+# Testing:
+    - Alcotest + qcheck (OCaml property-based testing)
+    - ExUnit + StreamData (Elixir)
+    - Test.jl (Julia)
+    - Jest + React Testing Library (ReScript)
+
+# Infrastructure:
+    - Virtuoso 7+ (RDF triplestore)
+    - Docker (containerization)
+    - GitLab CI / GitHub Actions (CI/CD)
+
+# Documentation:
+    - AsciiDoc (primary format for complex docs)
+    - Markdown (READMEs, simple docs)
+    - LaTeX (future: academic papers)
+
+# ============================================================================
+# STANDARDS & COMPLIANCE
+# ============================================================================
+
+# RSR (Rhodium Standard Repository):
+    Level: Bronze (70/100 points) - Target
+    Compliance: See docs/RSR_COMPLIANCE_AUDIT.md
+    Framework: Type safety, memory safety, offline-first, TPCF
+
+# Licenses:
+    Code: MIT OR Palimpsest v0.8 (dual-licensed)
+    Documentation: MIT OR Palimpsest v0.8
+    See: LICENSE.txt
+
+# Security:
+    Policy: SECURITY.md
+    Contact: .well-known/security.txt (RFC 9116)
+    Model: Defense-in-depth, 10+ security dimensions
+
+# AI Training:
+    Policy: .well-known/ai.txt
+    Permitted: Yes, with attribution and Palimpsest Principles
+    Prohibited: Surveillance, manipulation, weapons systems
+
+# ============================================================================
+# SITE & REPOSITORY
+# ============================================================================
+
+# Main Repository:
+    URL: https://github.com/Hyperpolymath/convesation-spaghetti
+    Clone: git clone https://github.com/Hyperpolymath/convesation-spaghetti.git
+    Branch: main (stable), develop (active development)
+
+# Documentation:
+    Architecture: docs/architecture/system-architecture.adoc
+    Research: docs/research/ (6 comprehensive reports)
+    Component Guides: */README.md in each subdirectory
+
+# Issue Tracker:
+    GitHub Issues: https://github.com/Hyperpolymath/convesation-spaghetti/issues
+    Discussions: https://github.com/Hyperpolymath/convesation-spaghetti/discussions
+
+# CI/CD:
+    GitLab CI: .gitlab-ci.yml
+    GitHub Actions: (Future: .github/workflows/)
+
+# ============================================================================
+# PROJECT STATUS
+# ============================================================================
+
+# Version: 0.1.0-alpha (Planning → Initial Implementation)
+# Status: Active Development
+# Maturity: Experimental / Research
+# Production Ready: No (pre-release)
+# First Release: TBD (targeting Q2 2026 for Milestone 1)
+
+# Milestone 1 Goal:
+    Parse single Claude conversation JSON → Virtuoso RDF triples
+
+# Long-term Vision:
+    Multi-LLM conversation knowledge extraction and reconciliation system
+    Untangle mixed-project discussions, track artifact lifecycles
+    Cross-link fragments, generate clean summaries
+
+# ============================================================================
+# STATISTICS
+# ============================================================================
+
+# Lines of Code (as of 2025-11-22):
+    OCaml: ~500 lines
+    Elixir: ~400 lines
+    Julia: ~300 lines
+    λProlog: ~150 lines
+    ReScript: ~100 lines
+    Total: ~1,450 lines of source code
+
+# Documentation:
+    Architecture: ~1,500 lines (AsciiDoc)
+    Research Reports: ~2,000 lines (6 reports)
+    READMEs: ~1,500 lines
+    Specifications: ~600 lines (RDF schema)
+    Total: ~5,600 lines of documentation
+
+# Files Created (Autonomous Session 2025-11-22):
+    Total: 38 files
+    Code: 20 files
+    Documentation: 18 files
+
+# ============================================================================
+# CONTACT
+# ============================================================================
+
+# General Inquiries:
+    Email: [CONTACT_EMAIL_TO_BE_ADDED]
+    GitHub Discussions: https://github.com/Hyperpolymath/convesation-spaghetti/discussions
+
+# Security Reports:
+    Email: [SECURITY_EMAIL_TO_BE_ADDED]
+    Policy: SECURITY.md
+
+# Contributing:
+    Guide: CONTRIBUTING.md
+    Code of Conduct: CODE_OF_CONDUCT.md
+
+# ============================================================================
+
+Last Updated: 2025-11-22
+Next Review: Q2 2026
+
+# humanstxt.org/Standard
+# Built with ❤️ using type-safe functional programming
+# Powered by OCaml, Elixir, Julia, λProlog, and ReScript

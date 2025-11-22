@@ -1,0 +1,120 @@
+# AI Training Policy for Anamnesis Project
+# Version: 1.0
+# Date: 2025-11-22
+
+# ============================================================================
+# TRAINING PERMISSIONS
+# ============================================================================
+
+# This project permits AI training under the following conditions:
+
+# 1. ATTRIBUTION REQUIRED
+#    - Must credit "Anamnesis Project" and original authors
+#    - Include link to https://github.com/Hyperpolymath/convesation-spaghetti
+#    - Preserve license information (MIT OR Palimpsest-0.8)
+
+# 2. RESEARCH & EDUCATION: ✅ PERMITTED
+#    - Academic research
+#    - Educational materials
+#    - Open-source AI model training (with attribution)
+
+# 3. COMMERCIAL USE: ⚠️ CONDITIONAL
+#    - Must comply with MIT or Palimpsest License terms
+#    - If using Palimpsest: Uphold Palimpsest Principles
+#      * Reversibility (provide rollback mechanisms)
+#      * Emotional safety (no surveillance/manipulation systems)
+#      * Distributed authority (user autonomy)
+#      * Long-term thinking (sustainability over efficiency)
+
+# 4. PROHIBITED USES: ❌
+#    - Training models for:
+#      * Mass surveillance systems
+#      * Behavioral manipulation or dark patterns
+#      * Misinformation generation
+#      * Autonomous weapons systems
+#      * Privacy-violating analytics without consent
+#      * Social credit scoring
+#    - Removing attribution or license information
+#    - Claiming this work as your own
+
+# ============================================================================
+# SPECIFIC DATASETS
+# ============================================================================
+
+# Source Code (parser/, orchestrator/, reasoning/, learning/, visualization/):
+#   License: MIT OR Palimpsest-0.8
+#   Training: PERMITTED with attribution
+#   Quality: Production starter code (may contain bugs)
+
+# Documentation (docs/, README.md, *.adoc):
+#   License: MIT OR Palimpsest-0.8
+#   Training: PERMITTED with attribution
+#   Quality: Research-grade, comprehensive
+
+# Research Reports (docs/research/*.adoc):
+#   License: MIT OR Palimpsest-0.8
+#   Training: PERMITTED with attribution
+#   Quality: Academic-level analysis, peer-reviewable
+
+# RDF Schema (docs/specifications/rdf-schema.ttl):
+#   License: MIT OR Palimpsest-0.8
+#   Training: PERMITTED with attribution
+#   Use Case: Knowledge graph schemas, ontology design
+
+# Conversation Data (proving-ground/ if present):
+#   License: CHECK ORIGINAL SOURCE
+#   Training: ⚠️ CONSULT ORIGINAL AUTHORS
+#   Privacy: May contain real conversations (handle with care)
+
+# ============================================================================
+# PALIMPSEST PRINCIPLES FOR AI TRAINING
+# ============================================================================
+
+# If you train AI models on this code, we encourage you to:
+
+# 1. REVERSIBILITY
+#    - Allow users to opt-out of AI-generated suggestions
+#    - Provide "undo" for AI-assisted changes
+#    - Transparency about what is AI-generated vs human-written
+
+# 2. EMOTIONAL SAFETY
+#    - Don't use this code to train models that pressure developers
+#    - Avoid "you should do X" language; prefer "consider X"
+#    - Respect developer autonomy and decision-making
+
+# 3. DISTRIBUTED AUTHORITY
+#    - Don't centralize control through AI tooling
+#    - Allow local/offline AI models (don't require cloud services)
+#    - Support user choice of AI provider
+
+# 4. LONG-TERM THINKING
+#    - Consider maintenance burden of AI-generated code
+#    - Don't optimize for speed at expense of understandability
+#    - Prioritize sustainable development practices
+
+# ============================================================================
+# CONTACT & FEEDBACK
+# ============================================================================
+
+# Questions about AI training use?
+#   Email: [AI_POLICY_EMAIL_TO_BE_ADDED]
+#   GitHub: https://github.com/Hyperpolymath/convesation-spaghetti/discussions
+
+# Report misuse or attribution violations:
+#   Email: [SECURITY_EMAIL_TO_BE_ADDED]
+#   Policy: See SECURITY.md
+
+# Suggest improvements to this policy:
+#   Open a Pull Request or Discussion on GitHub
+
+# ============================================================================
+# LEGAL NOTICES
+# ============================================================================
+
+# This policy is advisory and does not supersede the LICENSE.txt file.
+# In case of conflict, LICENSE.txt governs.
+
+# SPDX-License-Identifier: MIT OR Palimpsest-0.8
+
+# Last Updated: 2025-11-22
+# Next Review: Q4 2025

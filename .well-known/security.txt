@@ -1,0 +1,22 @@
+# RFC 9116 Compliant Security Contact Information
+# https://securitytxt.org/
+
+Contact: mailto:[SECURITY_EMAIL_TO_BE_ADDED]
+Contact: https://github.com/Hyperpolymath/convesation-spaghetti/security/advisories
+Expires: 2026-11-22T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://raw.githubusercontent.com/Hyperpolymath/convesation-spaghetti/main/.well-known/security.txt
+
+# Encryption: [GPG_KEY_URL_TO_BE_ADDED]
+
+Policy: https://github.com/Hyperpolymath/convesation-spaghetti/blob/main/SECURITY.md
+Acknowledgments: https://github.com/Hyperpolymath/convesation-spaghetti/blob/main/SECURITY.md#hall-of-fame
+
+# Hiring: https://github.com/Hyperpolymath/convesation-spaghetti/blob/main/CONTRIBUTING.md
+
+# Please report security vulnerabilities privately.
+# Do NOT open public GitHub issues for security bugs.
+#
+# Expected response time: 48 hours
+# Fix timeline: 7-60 days depending on severity
+# Disclosure: Coordinated, 90-day embargo
