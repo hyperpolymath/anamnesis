@@ -1,13 +1,14 @@
-# Changelog
+// SPDX-License-Identifier: AGPL-3.0-or-later
+= Changelog
 
 All notable changes to the Anamnesis project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+== [Unreleased]
 
-### Added
+=== Added
 - Comprehensive RSR (Rhodium Standard Repository) compliance
   - LICENSE.txt (dual MIT + Palimpsest v0.8)
   - SECURITY.md with vulnerability reporting
@@ -17,17 +18,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - .well-known/ directory (security.txt RFC 9116, ai.txt, humans.txt)
 - RSR compliance audit document (docs/RSR_COMPLIANCE_AUDIT.md)
 
-## [0.1.0-alpha] - 2025-11-22
+== [0.1.0-alpha] - 2025-11-22
 
-### Added
+=== Added
 
-#### Project Foundation
+==== Project Foundation
 - Initial repository structure and organization
 - CLAUDE.md with comprehensive project guidance
 - README.md with project overview and getting started guide
 - Complete multi-language component structure (parser, orchestrator, reasoning, learning, visualization)
 
-#### Research & Architecture
+==== Research & Architecture
 - 6 comprehensive research reports (AsciiDoc format):
   - Julia RDF Ecosystem Analysis (Serd.jl, SPARQL via HTTP.jl)
   - Julia Reservoir Computing Survey (ReservoirComputing.jl, KBANN)
@@ -38,14 +39,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - System architecture document (docs/architecture/system-architecture.adoc, 50+ sections)
 - RDF schema/ontology (docs/specifications/rdf-schema.ttl, Turtle format)
 
-#### Parser Component (OCaml)
+==== Parser Component (OCaml)
 - ATD schema definitions (conversation_types.atd)
 - Generic conversation module with validation and utilities
 - Claude JSON format parser with artifact extraction
 - Dune build system configuration
 - Port interface scaffolding (Erlang External Term Format via Alberto)
 
-#### Orchestrator Component (Elixir)
+==== Orchestrator Component (Elixir)
 - OTP application with supervision tree
 - ParserPort GenServer for OCaml communication
 - PortSupervisor for process management
@@ -53,32 +54,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mix project configuration
 - Development and test configurations
 
-#### Reasoning Component (λProlog/ELPI)
+==== Reasoning Component (λProlog/ELPI)
 - Artifact lifecycle state machine (lifecycle/artifact_states.elpi)
 - Fuzzy multi-category membership logic (categorization/fuzzy_membership.elpi)
 - Contamination detection for cross-project artifacts (categorization/contamination.elpi)
 - Example queries and test data
 
-#### Learning Component (Julia)
+==== Learning Component (Julia)
 - Project structure with dependencies (Project.toml)
 - RDF schema constants module
 - RDF serialization (conversation → triples → N-Triples)
 - Port interface for Elixir communication
 - Module scaffolding for reservoir computing and KBANN
 
-#### Visualization Component (ReScript)
+==== Visualization Component (ReScript)
 - Type-safe domain model with phantom types (Domain.res)
 - Color mixing for fuzzy project categorization (ColorMixing.res)
 - ReScript compiler and npm configuration
 - Component scaffolding
 
-#### Documentation
+==== Documentation
 - Component-specific READMEs (parser, orchestrator, reasoning, learning, visualization)
 - Autonomous development session summary (docs/AUTONOMOUS_SESSION_SUMMARY.adoc)
 - Architecture and design documentation
 - Contribution guidelines
 
-### Technical Decisions
+=== Technical Decisions
 - **NO PYTHON constraint** enforced throughout (Julia for scientific computing)
 - Type safety via OCaml, Elixir typespecs, ReScript, Julia type annotations
 - Functional paradigm across all components
@@ -86,18 +87,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Multi-LLM support designed from the start (stubbed complexity initially)
 - Academic rigor in documentation and research
 
-### Known Issues
+=== Known Issues
 - No test infrastructure yet (planned for Phase 2)
 - Starter code only (not production-ready)
 - Some dependencies not yet installed (see component READMEs)
 - No CI/CD pipeline yet (planned)
 
-### Migration Notes
+=== Migration Notes
 - Project in planning phase → initial implementation
 - TPCF Perimeter 2 (Trusted Collaborators) - limited write access
 - Will migrate to Perimeter 3 (Community Sandbox) post-Milestone 1
 
-## Versioning Policy
+== Versioning Policy
 
 Anamnesis follows [Semantic Versioning 2.0.0](https://semver.org/):
 
@@ -114,7 +115,7 @@ Anamnesis follows [Semantic Versioning 2.0.0](https://semver.org/):
 
 **Current status**: `0.1.0-alpha` (planning phase, not production-ready)
 
-## Release Schedule
+== Release Schedule
 
 **Planned Milestones**:
 
@@ -125,7 +126,7 @@ Anamnesis follows [Semantic Versioning 2.0.0](https://semver.org/):
 
 Actual dates subject to change based on development progress and community contributions.
 
-## How to Read This Changelog
+== How to Read This Changelog
 
 - **[Unreleased]**: Changes in development, not yet released
 - **[Version]**: Released version with date
@@ -136,7 +137,7 @@ Actual dates subject to change based on development progress and community contr
 - **Fixed**: Bug fixes
 - **Security**: Security fixes (always highlighted)
 
-## Contributing to Changelog
+== Contributing to Changelog
 
 When submitting a PR, update the `[Unreleased]` section with your changes in the appropriate category. Maintainers will move entries to versioned sections upon release.
 
