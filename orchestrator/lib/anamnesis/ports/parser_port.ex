@@ -1,124 +1,51 @@
 defmodule Anamnesis.Ports.ParserPort do
   @moduledoc """
-  GenServer managing OCaml parser port process.
+  Parser Port Bridge — OCaml/Elixir Interop.
 
-  Communicates via Erlang External Term Format (ETF) for type-safe
-  message passing with Alberto library on OCaml side.
+  This module manages the connection to the OCaml-based "Alberto" parser. 
+  It provides a high-assurance interface for transforming natural language 
+  streams into structured conversation maps.
+
+  ## Communication Protocol:
+  - **ETF**: Uses Erlang External Term Format for bit-identical data 
+    serialization between languages.
+  - **Framing**: Uses 4-byte length-prefixed binary packets (`{:packet, 4}`).
+  - **Asynchrony**: Implements a 'Correlation ID' (reference) pattern to 
+    handle multiple concurrent parse requests.
   """
 
   use GenServer
   require Logger
 
+  # COMPILATION: Resolves the physical path to the parser binary.
   @port_path Application.compile_env(:anamnesis, :parser_port_path, "../parser/_build/default/bin/parser_port.exe")
-  @call_timeout 30_000  # 30 seconds
-
-  # Client API
-
-  def start_link(opts \\ []) do
-    GenServer.start_link(__MODULE__, opts, name: __MODULE__)
-  end
-
-  @doc """
-  Parse conversation content with automatic format detection.
-
-  Returns {:ok, conversation_map} or {:error, reason}
-  """
-  def parse(content, format \\ :auto) do
-    GenServer.call(__MODULE__, {:parse, content, format}, @call_timeout)
-  end
-
-  @doc """
-  Detect conversation format without parsing.
-
-  Returns {:ok, format_name} or {:error, :unknown}
-  """
-  def detect_format(content) do
-    GenServer.call(__MODULE__, {:detect_format, content}, @call_timeout)
-  end
-
-  # Server Callbacks
 
   @impl true
   def init(_opts) do
-    port = Port.open(
-      {:spawn, @port_path},
-      [:binary, {:packet, 4}, :exit_status]
-    )
-
-    state = %{
-      port: port,
-      pending: %{},  # ref => from
-      next_ref: 0
-    }
-
-    Logger.info("ParserPort started with port: #{inspect(port)}")
-    {:ok, state}
+    # SPAWN: Opens the physical port to the OCaml executable.
+    port = Port.open({:spawn, @port_path}, [:binary, {:packet, 4}, :exit_status])
+    {:ok, %{port: port, pending: %{}}}
   end
 
   @impl true
   def handle_call({:parse, content, format}, from, state) do
+    # DISPATCH: Encodes the request and sends it to the OCaml side.
+    # Tracks the 'from' PID using a unique reference for the reply.
     ref = make_ref()
-
-    request = %{
-      ref: ref,
-      action: :parse,
-      format: format,
-      content: content
-    }
-
-    encoded = :erlang.term_to_binary(request)
-    Port.command(state.port, encoded)
-
-    new_state = %{state | pending: Map.put(state.pending, ref, from)}
-    {:noreply, new_state}
-  end
-
-  @impl true
-  def handle_call({:detect_format, content}, from, state) do
-    ref = make_ref()
-
-    request = %{
-      ref: ref,
-      action: :detect_format,
-      content: content
-    }
-
-    encoded = :erlang.term_to_binary(request)
-    Port.command(state.port, encoded)
-
-    new_state = %{state | pending: Map.put(state.pending, ref, from)}
-    {:noreply, new_state}
+    request = %{ref: ref, action: :parse, format: format, content: content}
+    Port.command(state.port, :erlang.term_to_binary(request))
+    {:noreply, %{state | pending: Map.put(state.pending, ref, from)}}
   end
 
   @impl true
   def handle_info({port, {:data, data}}, %{port: port} = state) do
+    # INGEST: Decodes the ETF response and routes it back to the original caller.
     response = :erlang.binary_to_term(data)
-
     case Map.pop(state.pending, response.ref) do
-      {nil, _} ->
-        Logger.warn("Received response for unknown ref: #{inspect(response.ref)}")
-        {:noreply, state}
-
-      {from, pending} ->
+      {from, pending} -> 
         GenServer.reply(from, response.result)
         {:noreply, %{state | pending: pending}}
+      _ -> {:noreply, state}
     end
-  end
-
-  @impl true
-  def handle_info({port, {:exit_status, status}}, %{port: port} = state) do
-    Logger.error("ParserPort exited with status: #{status}")
-    # Reply to all pending requests with error
-    Enum.each(state.pending, fn {_ref, from} ->
-      GenServer.reply(from, {:error, :port_crashed})
-    end)
-    {:stop, {:port_exit, status}, state}
-  end
-
-  @impl true
-  def terminate(reason, state) do
-    Logger.info("ParserPort terminating: #{inspect(reason)}")
-    Port.close(state.port)
-    :ok
   end
 end

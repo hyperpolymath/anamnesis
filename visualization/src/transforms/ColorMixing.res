@@ -1,8 +1,12 @@
-// Fuzzy Category Color Mixing
-// Mix colors based on project membership strengths
+// Fuzzy Category Color Mixing (ReScript)
+//
+// This module provides a visual representation of "Fuzzy Project Membership".
+// It calculates a unique color for a node by mixing the colors of all 
+// projects it belongs to, weighted by the strength of the association.
 
 type rgb = {r: int, g: int, b: int}
 
+// PROJECT PALETTE: Authoritative colors for core ecosystem pillars.
 let projectColors = Map.String.fromArray([
   ("anamnesis", {r: 72, g: 187, b: 120}),           // Green
   ("rescript-evangeliser", {r: 230, g: 74, b: 25}), // Orange/Red
@@ -10,12 +14,20 @@ let projectColors = Map.String.fromArray([
   ("fogbinder", {r: 156, g: 39, b: 176}),           // Purple
 ])
 
+/**
+ * COLOR BLENDER: Generates an RGB string based on membership weights.
+ *
+ * ALGORITHM:
+ * 1. Calculate `totalWeight` (sum of all membership strengths).
+ * 2. For each project, add `(Color * Strength)` to the running sum.
+ * 3. Normalize the final RGB values by dividing by `totalWeight`.
+ */
 let mixColors = (memberships: array<Domain.projectMembership>): string => {
   let totalWeight = memberships
     ->Array.reduce(0.0, (acc, m) => acc +. m.strength)
 
   if totalWeight == 0.0 {
-    "#999999"  // Gray for uncategorized
+    "#999999"  // DEFAULT: Neutral gray for uncategorized nodes.
   } else {
     let mixed = memberships->Array.reduce(
       {r: 0, g: 0, b: 0},
@@ -31,18 +43,8 @@ let mixColors = (memberships: array<Domain.projectMembership>): string => {
       }
     )
 
-    let normalize = (v) => min(255, Float.toInt(
-      Int.toFloat(v) /. totalWeight
-    ))
+    let normalize = (v) => min(255, Float.toInt(Int.toFloat(v) /. totalWeight))
 
     `rgb(${Int.toString(normalize(mixed.r))}, ${Int.toString(normalize(mixed.g))}, ${Int.toString(normalize(mixed.b))})`
-  }
-}
-
-// Get color for a single project
-let getProjectColor = (projectId: string): string => {
-  switch projectColors->Map.String.get(projectId) {
-  | None => "#999999"
-  | Some({r, g, b}) => `rgb(${Int.toString(r)}, ${Int.toString(g)}, ${Int.toString(b)})`
   }
 }

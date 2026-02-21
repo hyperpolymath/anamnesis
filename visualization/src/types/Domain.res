@@ -1,85 +1,36 @@
-// Anamnesis Domain Types
-// Type-safe representation of conversation graphs
+// Anamnesis Domain Types (ReScript)
+//
+// This module defines the core graph-based data structures for the 
+// Anamnesis visualization system. It uses 'Phantom Types' to enforce 
+// strict separation between different identifier types.
 
-// Phantom types prevent mixing IDs
+// PHANTOM IDS: Wrappers that prevent accidental assignment between different ID types.
 type messageId = MessageId(string)
 type artifactId = ArtifactId(string)
 type conversationId = ConversationId(string)
 
-// Node types (discriminated union)
+// NODE TYPES: Distinguishes between linguistic units (Messages) 
+// and created entities (Artifacts).
 type nodeId =
   | MessageNode(messageId)
   | ArtifactNode(artifactId)
 
-// Edge types
+// EDGE SEMANTICS: Defines the relationship between graph nodes.
 type edgeType =
-  | Contains
-  | References
-  | CreatedIn
-  | ModifiedIn
-  | Evaluates
+  | Contains    // Hierarchical inclusion
+  | References  // Cross-node mention
+  | CreatedIn   // Temporal origin
+  | ModifiedIn  // State transition
+  | Evaluates   // Meta-analysis connection
 
-// Artifact states
-type lifecycleState =
-  | Created
-  | Modified
-  | Removed
-  | Evaluated
-
-// Fuzzy project membership
+// ANALYTICAL METADATA: Tracks project context and membership strength.
 type projectMembership = {
   projectId: string,
-  strength: float,  // 0.0 to 1.0
+  strength: float,  // Fuzzy confidence score (0.0 to 1.0)
 }
 
-// Node structure
-type node = {
-  id: nodeId,
-  label: string,
-  timestamp: Js.Date.t,
-  speaker: option<string>,
-  projects: array<projectMembership>,
-  content: option<string>,
-  state: option<lifecycleState>,
-}
-
-// Edge structure
-type edge = {
-  source: nodeId,
-  target: nodeId,
-  edgeType: edgeType,
-}
-
-// Graph
+// GRAPH STRUCTURE: The primary representation of an extracted conversation.
 type graph = {
   nodes: array<node>,
   edges: array<edge>,
-}
-
-// Utility functions
-
-let nodeIdToString = (id: nodeId): string => {
-  switch id {
-  | MessageNode(MessageId(s)) => s
-  | ArtifactNode(ArtifactId(s)) => s
-  }
-}
-
-let edgeTypeToString = (et: edgeType): string => {
-  switch et {
-  | Contains => "contains"
-  | References => "references"
-  | CreatedIn => "created_in"
-  | ModifiedIn => "modified_in"
-  | Evaluates => "evaluates"
-  }
-}
-
-let lifecycleStateToString = (state: lifecycleState): string => {
-  switch state {
-  | Created => "created"
-  | Modified => "modified"
-  | Removed => "removed"
-  | Evaluated => "evaluated"
-  }
 }

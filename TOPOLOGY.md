@@ -1,0 +1,93 @@
+<!-- SPDX-License-Identifier: PMPL-1.0-or-later -->
+<!-- TOPOLOGY.md — Project architecture map and completion dashboard -->
+<!-- Last updated: 2026-02-19 -->
+
+# Anamnesis — Project Topology
+
+## System Architecture
+
+```
+                        ┌─────────────────────────────────────────┐
+                        │              DATA SOURCES               │
+                        │   (Claude, ChatGPT, Git, Browser)       │
+                        └───────────────────┬─────────────────────┘
+                                            │
+                                            ▼
+                        ┌─────────────────────────────────────────┐
+                        │           PARSER LAYER (OCAML)          │
+                        │      (Angstrom, Type-safe parsing)      │
+                        └───────────────────┬─────────────────────┘
+                                            │
+                                            ▼
+                        ┌─────────────────────────────────────────┐
+                        │        ORCHESTRATOR LAYER (ELIXIR)      │
+                        │      (OTP Supervision, HTTP API)        │
+                        └──────────┬───────────────────┬──────────┘
+                                   │                   │
+                                   ▼                   ▼
+                        ┌───────────────────────┐  ┌────────────────────────────────┐
+                        │ REASONING (λPROLOG)   │  │ ANALYTICS (JULIA)              │
+                        │ - Artifact Lifecycle  │  │ - RDF Gen, SPARQL Queries      │
+                        │ - Fuzzy Categories    │  │ - Reservoir Computing (ESN)    │
+                        └──────────┬────────────┘  └──────────┬─────────────────────┘
+                                   │                          │
+                                   └────────────┬─────────────┘
+                                                ▼
+                        ┌─────────────────────────────────────────┐
+                        │           STORAGE LAYER (VIRTUOSO)      │
+                        │      (RDF Triplestore, Named Graphs)    │
+                        └───────────────────┬─────────────────────┘
+                                            │
+                                            ▼
+                        ┌─────────────────────────────────────────┐
+                        │        VISUALIZATION (RESCRIPT)         │
+                        │      (Reagraph, Timeline, React)        │
+                        └─────────────────────────────────────────┘
+```
+
+## Completion Dashboard
+
+```
+COMPONENT                          STATUS              NOTES
+─────────────────────────────────  ──────────────────  ─────────────────────────────────
+PIPELINE STAGES
+  Parser (OCaml)                    ██████████ 100%    Claude parser stable
+  Orchestrator (Elixir)             ██████████ 100%    Port infrastructure stable
+  Reasoning (λProlog)               ████░░░░░░  40%    Lifecycle rules in progress
+  Analytics (Julia)                 ████████░░  80%    RDF and ESN modules ready
+  Visualization (ReScript)          ██████░░░░  60%    Domain types & color mixing
+
+INFRASTRUCTURE
+  Virtuoso Integration              ████░░░░░░  40%    Storage backend pending
+  Port Communication                ██████████ 100%    OCaml ↔ Elixir bridge active
+  Test Proving Ground               ██████████ 100%    zotero-voyant-export case
+
+REPO INFRASTRUCTURE
+  Justfile                          ██████████ 100%    Language-agnostic build tasks
+  .machine_readable/                ██████████ 100%    STATE.a2ml tracking
+  Documentation (Research)          ██████████ 100%    6 detailed tech reports
+
+─────────────────────────────────────────────────────────────────────────────
+OVERALL:                            ███████░░░  ~70%   Infrastructure complete, integrating
+```
+
+## Key Dependencies
+
+```
+Parser (OCaml) ───► Orchestrator ───► Analytics (Julia)
+                        │                 │
+                        ▼                 ▼
+                  Reasoning ───────► Virtuoso (RDF) ──────► Visualization
+```
+
+## Update Protocol
+
+This file is maintained by both humans and AI agents. When updating:
+
+1. **After completing a component**: Change its bar and percentage
+2. **After adding a component**: Add a new row in the appropriate section
+3. **After architectural changes**: Update the ASCII diagram
+4. **Date**: Update the `Last updated` comment at the top of this file
+
+Progress bars use: `█` (filled) and `░` (empty), 10 characters wide.
+Percentages: 0%, 10%, 20%, ... 100% (in 10% increments).

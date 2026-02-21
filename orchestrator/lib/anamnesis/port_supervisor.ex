@@ -1,6 +1,10 @@
 defmodule Anamnesis.PortSupervisor do
   @moduledoc """
-  Supervisor for all port processes (OCaml, λProlog, Julia).
+  Port Supervisor — Polyglot Runtime Management.
+
+  This module supervises the external processes used by Anamnesis for 
+  specialized computation. It manages the lifecycle of OCaml, λProlog, 
+  and Julia backends, communicating via the standard Erlang Port protocol.
   """
 
   use Supervisor
@@ -11,17 +15,19 @@ defmodule Anamnesis.PortSupervisor do
 
   @impl true
   def init(_init_arg) do
+    # WORKER INVENTORY:
+    # 1. ParserPool: A pool of OCaml workers for high-throughput text parsing.
+    # 2. LambdaPrologPort: A singleton reasoner for symbolic logic queries.
+    # 3. JuliaPort: A singleton analytics engine for complex graph metrics.
     children = [
-      # Parser pool (4 workers)
       {Anamnesis.Ports.ParserPool, pool_size: 4},
-
-      # λProlog reasoner port (single instance)
       {Anamnesis.Ports.LambdaPrologPort, []},
-
-      # Julia analytics port (single instance)
       {Anamnesis.Ports.JuliaPort, []}
     ]
 
+    # STRATEGY: :one_for_one. If the Julia process crashes due to a 
+    # large matrix calculation, the logical reasoner and parsers 
+    # continue to operate normally.
     Supervisor.init(children, strategy: :one_for_one)
   end
 end

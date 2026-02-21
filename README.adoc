@@ -358,3 +358,8 @@ To be determined.
 *Status*: Initial implementation phase. Core infrastructure complete, working toward Milestone 1.
 
 *Next Immediate Steps*: Complete end-to-end testing and Virtuoso integration.
+
+
+== Architecture
+
+See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion dashboard.
