@@ -1,0 +1,14 @@
+# Anamnesis Ecosystem Manifest (A2ML)
+@ecosystem { version: "0.1.0", last-updated: "2026-03-03" }
+
+@project:
+name: "anamnesis"
+purpose: "Extract and reconcile conversation knowledge"
+role: "knowledge-management-tools"
+@end
+
+@attestation:
+originalBytes: [Attested by Gemini CLI]
+signature: PLACEHOLDER-ED25519-SIGNATURE
+timestamp: 2026-03-03T12:00:00Z
+@end

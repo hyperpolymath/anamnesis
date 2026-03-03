@@ -1,3 +1,5 @@
+## [0.1.0] - 2026-03-03
+
 # Changelog
 
 All notable changes to the Anamnesis project will be documented in this file.
