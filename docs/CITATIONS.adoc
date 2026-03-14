@@ -6,29 +6,29 @@
 [source,bibtex]
 ----
 @software{anamnesis_2025,
-  author = {Polymath, Hyper},
+  author = {Jewell, Jonathan D.A.},
   title = {Anamnesis},
   year = {2025},
-  url = {https://github.com/hyperpolymath/Anamnesis},
-  license = {AGPL-3.0-or-later}
+  url = {https://github.com/hyperpolymath/anamnesis},
+  license = {PMPL-1.0-or-later}
 }
 ----
 
 == Harvard Style
 
-Polymath, H. (2025) _Anamnesis_ [Computer software]. Available at: https://github.com/hyperpolymath/Anamnesis
+Jewell, J.D.A. (2025) _Anamnesis_ [Computer software]. Available at: https://github.com/hyperpolymath/anamnesis
 
 == OSCOLA
 
-Hyper Polymath, 'Anamnesis' (2025) <https://github.com/hyperpolymath/Anamnesis>
+Jonathan D.A. Jewell, 'Anamnesis' (2025) <https://github.com/hyperpolymath/anamnesis>
 
 == MLA
 
-Polymath, Hyper. "Anamnesis." 2025, github.com/hyperpolymath/Anamnesis.
+Jewell, Jonathan D.A. "Anamnesis." 2025, github.com/hyperpolymath/anamnesis.
 
 == APA 7
 
-Polymath, H. (2025). _Anamnesis_ [Computer software]. GitHub. https://github.com/hyperpolymath/Anamnesis
+Jewell, J.D.A. (2025). _Anamnesis_ [Computer software]. GitHub. https://github.com/hyperpolymath/anamnesis
 
 == See Also
 
