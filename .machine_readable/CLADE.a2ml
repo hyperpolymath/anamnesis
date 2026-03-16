@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Clade declaration — part of the gv-clade-index registry
+# See: https://github.com/hyperpolymath/gv-clade-index
+
+[identity]
+uuid = "a8f9138e-228e-50c9-9f0c-36a37a4e185e"
+primary-forge = "github"
+primary-owner = "hyperpolymath"
+canonical-name = "anamnesis"
+prefixed-name = "ap-anamnesis"
+
+[clade]
+primary = "ap"
+secondary = []
+assigned = "2026-03-16"
+rationale = ""
+
+[forges]
+github = "hyperpolymath/anamnesis"
+gitlab = "hyperpolymath/anamnesis"
+bitbucket = "hyperpolymath/anamnesis"
+
+[lineage]
+type = "standalone"
+parent = "Memory/recall application"
+born = "2026-03-16"
