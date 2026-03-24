@@ -334,56 +334,67 @@ open-repo:
 
 # Show RSR compliance checklist
 rsr-checklist:
-    @cat << EOF
-RSR Compliance Checklist for Anamnesis
+    #!/usr/bin/env bash
+    cat << 'EOF'
+    RSR Compliance Checklist for Anamnesis
 
-✅ 1. Type Safety (90%): OCaml, Elixir typespecs, ReScript, Julia
-✅ 2. Memory Safety (60%): GC languages (OCaml/Elixir/Julia), no unsafe
-⚠️ 3. Offline-First (40%): Parser/reasoner offline, Virtuoso local
-✅ 4. Documentation (100%): README, component docs, architecture
-⚠️ 5. Testing (10%): Starter code only, no tests yet
-✅ 6. Build System (80%): dune, mix, just, flake.nix planned
-✅ 7. Security (90%): SECURITY.md, .well-known/security.txt
-✅ 8. Licensing (100%): LICENSE.txt (MIT OR Palimpsest-0.8)
-✅ 9. Contribution (100%): CONTRIBUTING.md, TPCF Perimeter 2
-✅ 10. Community (100%): CODE_OF_CONDUCT.md (CCCP-based)
-✅ 11. Versioning (100%): CHANGELOG.md, semantic versioning
+    [ok] 1. Type Safety (90%): OCaml, Elixir typespecs, ReScript, Julia
+    [ok] 2. Memory Safety (60%): GC languages (OCaml/Elixir/Julia), no unsafe
+    [!!] 3. Offline-First (40%): Parser/reasoner offline, Virtuoso local
+    [ok] 4. Documentation (100%): README, component docs, architecture
+    [!!] 5. Testing (10%): Starter code only, no tests yet
+    [ok] 6. Build System (80%): dune, mix, just, flake.nix planned
+    [ok] 7. Security (90%): SECURITY.md, .well-known/security.txt
+    [ok] 8. Licensing (100%): LICENSE.txt (MIT OR Palimpsest-0.8)
+    [ok] 9. Contribution (100%): CONTRIBUTING.md, TPCF Perimeter 2
+    [ok] 10. Community (100%): CODE_OF_CONDUCT.md (CCCP-based)
+    [ok] 11. Versioning (100%): CHANGELOG.md, semantic versioning
 
-Current Score: 70/100 (Bronze Level) ✅
+    Current Score: 70/100 (Bronze Level)
 
-Next Steps for Silver (85/100):
-- Add test infrastructure (all components)
-- Achieve 70% test coverage
-- Complete offline-first documentation
-- Setup Nix flakes for reproducible builds
-EOF
+    Next Steps for Silver (85/100):
+    - Add test infrastructure (all components)
+    - Achieve 70% test coverage
+    - Complete offline-first documentation
+    - Setup Nix flakes for reproducible builds
+    EOF
 
 # Show quick start guide
 quickstart:
-    @cat << EOF
-Anamnesis Quick Start Guide
+    #!/usr/bin/env bash
+    cat << 'EOF'
+    Anamnesis Quick Start Guide
 
-1. Setup dependencies:
-   just setup-all
+    1. Setup dependencies:
+       just setup-all
 
-2. Build all components:
-   just build-all
+    2. Build all components:
+       just build-all
 
-3. Run tests:
-   just test
+    3. Run tests:
+       just test
 
-4. Start development:
-   just dev
+    4. Start development:
+       just dev
 
-5. Validate before commit:
-   just validate
+    5. Validate before commit:
+       just validate
 
-For more commands: just --list
-For RSR compliance: just rsr-checklist
-For help: see README.md and CONTRIBUTING.md
-EOF
+    For more commands: just --list
+    For RSR compliance: just rsr-checklist
+    For help: see README.md and CONTRIBUTING.md
+    EOF
 
-# [AUTO-GENERATED] Multi-arch / RISC-V target
-build-riscv:
-	@echo "Building for RISC-V..."
-	cross build --target riscv64gc-unknown-linux-gnu
+# Synchronize A2ML metadata to SCM (Shadow Sync)
+sync-metadata:
+    #!/usr/bin/env bash
+    echo "Synchronizing metadata (A2ML -> SCM)..."
+    if [ -f .machine_readable/STATE.a2ml ]; then
+        COMPLETION=$(grep "completion-percentage:" .machine_readable/STATE.a2ml | awk '{print $2}')
+        sed -i "s/(overall-completion [0-9]\+)/(overall-completion $COMPLETION)/" .machine_readable/STATE.scm
+        echo "✓ Metadata synchronized"
+    fi
+
+# Run panic-attacker pre-commit scan
+assail:
+    @command -v panic-attack >/dev/null 2>&1 && panic-attack assail . || echo "panic-attack not found — install from https://github.com/hyperpolymath/panic-attacker"
