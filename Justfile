@@ -3,6 +3,8 @@
 # https://github.com/casey/just
 
 # Default recipe (list all recipes)
+import? "contractile.just"
+
 default:
     @just --list
 
