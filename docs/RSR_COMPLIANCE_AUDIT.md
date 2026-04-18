@@ -114,7 +114,7 @@
 - Type-safe parsing (OCaml, ReScript)
 - No unsafe code blocks
 - Local-first, no external data transmission
-- Dependency audit in justfile (`just security-scan`)
+- Dependency audit in Justfile (`just security-scan`)
 
 ### 8. Licensing ✅ PERFECT (10/10 points)
 - ✅ `LICENSE.txt` - Dual license (MIT OR Palimpsest v0.8)
@@ -251,7 +251,7 @@
 - ✅ Air-gapped installation procedures
 
 **Build System (50% → 100%)**:
-- ✅ Added justfile (30+ unified commands)
+- ✅ Added Justfile (30+ unified commands)
 - ✅ Multi-language build coordination
 
 **Security (20% → 100%)**:
