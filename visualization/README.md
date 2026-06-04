@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # Visualization Component (ReScript)
 
 Type-safe, functional visualization layer for exploring conversation graphs, artifact lifecycles, and multi-project categorization.

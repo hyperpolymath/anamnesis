@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # RSR Compliance Audit - Anamnesis Project
 # Generated: 2025-11-22
 # Last Updated: 2025-11-22 (Gold Level Achieved)

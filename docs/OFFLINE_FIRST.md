@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # Offline-First Architecture
 
 Anamnesis is designed to function in **fully offline, air-gapped environments** with no external dependencies.
