@@ -49,7 +49,7 @@ doc_score=0
 if [ -f "README.adoc" ]; then doc_score=$((doc_score + 1)); fi
 if [ -f "LICENSE" ]; then doc_score=$((doc_score + 1)); fi
 if [ -f "SECURITY.adoc" ]; then doc_score=$((doc_score + 1)); fi
-if [ -f "CONTRIBUTING.adoc" ]; then doc_score=$((doc_score + 1)); fi
+if [ -f "../.github/CONTRIBUTING.md" ]; then doc_score=$((doc_score + 1)); fi
 if [ -f "CODE_OF_CONDUCT.adoc" ]; then doc_score=$((doc_score + 1)); fi
 if [ -f "MAINTAINERS.adoc" ]; then doc_score=$((doc_score + 1)); fi
 if [ -f "CHANGELOG.adoc" ]; then doc_score=$((doc_score + 1)); fi
@@ -108,7 +108,7 @@ fi
 
 # Category 9: Contribution Model (5 points)
 echo "9. Contribution Model:"
-if [ -f "CONTRIBUTING.adoc" ] && grep -q "TPCF" CONTRIBUTING.adoc; then
+if [ -f "../.github/CONTRIBUTING.md" ] && grep -q "TPCF" ../.github/CONTRIBUTING.md; then
     echo "   ✓ TPCF documented"
     score=$((score + 5))
 else
